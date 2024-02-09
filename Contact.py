@@ -1,15 +1,22 @@
-import streamlit as st
-import webbrowser 
-def app(sst):
+def app(st, webbrowser , current_dir, Image):
+    # _______________________ directory of needed files __________
+    resume_file = current_dir / "Resume" / "MyResume.pdf"
+    profile_pic = current_dir / "Photos" / "profile-pic.png"
+    Linkedin_pic = current_dir / "Photos" / "linkedin.png"
+    Github_pic = current_dir / "Photos" / "github.png"
+    Gmail_pic = current_dir / "Photos" / "gmail.png"
+
+
     # ___________________________ Picture ans summary  __________________
     c1,c2 = st.columns([1,2])
-    c1.image(".\Photos\profile-pic.png")
+    profile_pic = Image.open(profile_pic)
+    c1.image(profile_pic)
     with c2:
         st.header('About Me')
         st.markdown("I am a Computer Engineering student at Cairo University Faculty of Engineering with a focused interest in the field of machine learning and data science. Eager to elevate my skills through hands-on, cutting-edge projects.  I am ready to apply my knowledge to real-world challenges, contributing to the forefront of technology and innovation.")
         st.caption('Feb 2024')
 # TODO: Myresume.pdf 
-        with open('.\Resume\MyResume.pdf', "rb") as pdf_file:
+        with open(resume_file, "rb") as pdf_file:
             PDFbyte = pdf_file.read()
 
         st.download_button(
@@ -22,13 +29,16 @@ def app(sst):
     st.write('#')
     # ___________________________ Links __________________
     _,sup = st.columns([1,2])
+    Linkedin_pic = Image.open(Linkedin_pic)
+    Github_pic = Image.open(Github_pic)
+    Gmail_pic = Image.open(Gmail_pic)
     with sup:
         sub = st.columns(3)
-        sub[0].image(".\Photos\linkedin.png", width= 50)
+        sub[0].image(Linkedin_pic, width= 50)
         LinkedIn = sub[0].button('LinkedIn')
-        sub[1].image(".\Photos\github.png", width= 50)
+        sub[1].image(Github_pic, width= 50)
         GitHub = sub[1].button('GitHub')
-        sub[2].image(".\Photos\gmail.png", width= 50)
+        sub[2].image(Gmail_pic, width= 50)
         Gmail = sub[2].button('Gmail')
 
     if LinkedIn:
@@ -38,5 +48,3 @@ def app(sst):
     if Gmail:
         webbrowser.open('mailto: mohammed.khayyat02@eng-st.cu.edu.eg', new=2)
         
-        
-    
