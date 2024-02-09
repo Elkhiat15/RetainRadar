@@ -1,7 +1,15 @@
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
+import webbrowser 
+import pickle
+from pathlib import Path
+from PIL import Image
 import Dashboard,Prediction,Contact
+
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+logo = current_dir / "Photos" / "logo.png"
+logo = Image.open(logo)
 
 # set page configrations
 st.set_page_config(
@@ -32,7 +40,7 @@ class MaltiPage:
     def run():
         with st.sidebar:
             st.title('RetainRadar')
-            st.image("logo.png", width=175)
+            st.image(logo, width=175)
         with st.sidebar:
             app = option_menu(None,
                 options =['Dashboard', 'Check the Risk', 'Contact'],
@@ -44,9 +52,9 @@ class MaltiPage:
         if app =='Dashboard':
             Dashboard.app(df, st)
         if app =='Check the Risk':
-            Prediction.app(df, st, option_menu, pd)
+            Prediction.app(df, st, option_menu, pd, pickle)
         if app =='Contact':
-            Contact.app(st)
+            Contact.app(st, webbrowser, current_dir, Image)
 
 ## run the program     
     run()
