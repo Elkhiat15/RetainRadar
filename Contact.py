@@ -35,16 +35,8 @@ def app(st, webbrowser , current_dir, Image):
     with sup:
         sub = st.columns(3)
         sub[0].image(Linkedin_pic, width= 50)
-        LinkedIn = sub[0].button('LinkedIn')
+        LinkedIn = sub[0].link_button('LinkedIn', 'https://www.linkedin.com/in/mohammed-elkhiat-66b36521a')
         sub[1].image(Github_pic, width= 50)
-        GitHub = sub[1].button('GitHub')
+        GitHub = sub[1].link_button('GitHub', 'https://github.com/Elkhiat15')
         sub[2].image(Gmail_pic, width= 50)
-        Gmail = sub[2].button('Gmail')
-
-    if LinkedIn:
-        webbrowser.open('https://www.linkedin.com/in/mohammed-elkhiat-66b36521a', new=2)
-    if GitHub:
-        webbrowser.open('https://github.com/Elkhiat15', new=2)
-    if Gmail:
-        webbrowser.open('mailto: mohammed.khayyat02@eng-st.cu.edu.eg', new=2)
-        
+        Gmail = sub[2].link_button('Gmail', 'mailto: mohammed.khayyat02@eng-st.cu.edu.eg')
