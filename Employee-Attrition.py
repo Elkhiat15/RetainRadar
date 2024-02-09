@@ -32,7 +32,7 @@ class MaltiPage:
     def run():
         with st.sidebar:
             st.title('RetainRadar')
-            st.image(".\Photos\logo.png", width=175)
+            st.image("logo.png", width=175)
         with st.sidebar:
             app = option_menu(None,
                 options =['Dashboard', 'Check the Risk', 'Contact'],
