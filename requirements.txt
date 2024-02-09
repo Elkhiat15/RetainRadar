@@ -4,4 +4,5 @@ scipy==1.11.1
 streamlit==1.31.0
 streamlit_option_menu==0.3.12
 webbrowser 
+scikit-learn
 pickle
