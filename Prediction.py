@@ -1,10 +1,9 @@
-import pickle
-import streamlit as st
 
-with open("logreg_model.sav", 'rb') as file:
-    model = pickle.load(file)
 
-def app(X_train, sst, option_menu, pd):
+def app(X_train, st, option_menu, pd, pickle):
+    with open("logreg_model.sav", 'rb') as file:
+        model = pickle.load(file)
+
     st.title('Check the Risk')
     styles = {
         "icon": { "font-size": "12px"}, 
