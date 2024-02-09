@@ -1,4 +1,4 @@
-def app(st, webbrowser , current_dir, Image):
+def app(st, current_dir, Image):
     # _______________________ directory of needed files __________
     resume_file = current_dir / "Resume" / "MyResume.pdf"
     profile_pic = current_dir / "Photos" / "profile-pic.png"
