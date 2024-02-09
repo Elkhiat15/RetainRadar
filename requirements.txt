@@ -4,3 +4,4 @@ scipy==1.11.1
 scikit_learn
 streamlit==1.31.0
 streamlit_option_menu==0.3.12
+category_encoders
