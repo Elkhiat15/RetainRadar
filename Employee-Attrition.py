@@ -53,7 +53,7 @@ class MaltiPage:
         if app =='Check the Risk':
             Prediction.app(df, st, option_menu, pd, pickle)
         if app =='Contact':
-            Contact.app(st, webbrowser, current_dir, Image)
+            Contact.app(st, current_dir, Image)
 
 ## run the program     
     run()
