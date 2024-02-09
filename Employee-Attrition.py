@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from streamlit_option_menu import option_menu
-import webbrowser 
 import pickle
 from pathlib import Path
 from PIL import Image
