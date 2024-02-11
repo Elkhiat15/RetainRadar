@@ -13,7 +13,7 @@ def app(st, current_dir, Image):
     c1.image(profile_pic)
     with c2:
         st.header('About Me')
-        st.markdown("I am a Computer Engineering student at Cairo University Faculty of Engineering with a focused interest in the field of machine learning and data science. Eager to elevate my skills through hands-on, cutting-edge projects.  I am ready to apply my knowledge to real-world challenges, contributing to the forefront of technology and innovation.")
+        st.markdown("My name is **Mohammed Elkhiat**, I am a Computer Engineering student at Cairo University Faculty of Engineering with a focused interest in the field of machine learning and data science. Eager to elevate my skills through hands-on, cutting-edge projects.  I am ready to apply my knowledge to real-world challenges, contributing to the forefront of technology and innovation.")
         st.caption('Feb 2024')
 # TODO: Myresume.pdf 
         with open(resume_file, "rb") as pdf_file:
