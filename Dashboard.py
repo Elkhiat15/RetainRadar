@@ -3,21 +3,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from scipy import stats
 def app(df, st):
-    #_________________________ Helper Functions __________________________
-    def AddPercentage(Df, st=""):
-        '''Add percentage column to given Df to use in annot bar plot.'''
-        lenght = len(Df[st])
-        Df["percent"]=lenght*[""]
-        i=0
-        while i <lenght :
-            Sum = Df.iloc[i,2] +Df.iloc[i+1,2]
-            prc1 = round((Df.iloc[i,2] / Sum) * 100 , 2)
-            Df.iloc[i,3] = str(prc1) + ' %'
-            prc2= round( (Df.iloc[i+1,2] / Sum )* 100,2)
-            Df.iloc[i+1,3] = str(prc2) + ' %'
-            i =i+2 
-        return Df
-    
+    #_________________________ Helper Functions __________________________    
     def PlotPies(st=""):
         '''Plot four beside pie charts.'''
         bus=df.groupby([st,'Attrition'],as_index=False)['Age'].count()
@@ -72,8 +58,7 @@ def app(df, st):
                                          'WorkLifeBalance','RelationshipSatisfaction'])
 
     subData = df.groupby([selected, colored])["Age"].count().reset_index(name='Counts')
-    subData = AddPercentage(subData,selected)
-    fig =px.bar(subData, y ="Counts", x =selected,color=colored, text='percent',template='plotly',
+    fig =px.bar(subData, y ="Counts", x =selected,color=colored, template='plotly',
                 title=f"{selected} with {colored}")
     st.plotly_chart(fig, use_container_width=True)
    
