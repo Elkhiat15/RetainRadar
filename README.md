@@ -25,7 +25,7 @@ This project utilizes Python, Streamlit, Plotly, and SciPy to create a comprehen
    ```
 3. Run the app with
    ```
-    streamlit run app.py
+    streamlit run Employee-Attrition.py
    ```
 
 ## Usage
